@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view, permission_classes
 from .serializers import AppointmentSerializer
 from .models import Appointment
 from variable_constants import *
+from django.shortcuts import get_object_or_404
 
 
 @api_view([POST, GET])
@@ -29,3 +30,11 @@ def get_all_appointments(request):
         appointments = Appointment.objects.all()
         serializer = AppointmentSerializer(appointments, many=True)
         return Response(serializer.data)
+
+@api_view([DELETE])
+@permission_classes([IsAuthenticated])
+def delete_appointment(request, pk):
+    appointment = get_object_or_404(Appointment, pk=pk)
+    if request.method == DELETE:
+        appointment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
+import razorLogo from './Assets/razorLogo.png'
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
@@ -12,7 +13,7 @@ const Navbar = () => {
       <ul>
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>React/Django JWT</b>
+            <img src={razorLogo} alt='razorLogo' className="razorLogo"></img>
           </Link>
         </li>
         <li>
