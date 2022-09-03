@@ -2,10 +2,12 @@ ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  align-items: center;
 }
 
 li {
   font-size: 1.25rem;
+  cursor: pointer;
 }
 
 .navBar {
@@ -21,10 +23,11 @@ li {
   border: 2px solid white;
   color: white;
   padding: 0.4rem 0.5rem;
+  
 }
 
 .navBar button:hover {
-  background: white;
+  background: black;
   color: #cf3e38;
   cursor: pointer;
 }
@@ -35,6 +38,18 @@ li {
 }
 
 .razorLogo {
-  height: 90px;
-  width: 250px;
+  height: 100px;
+  width: 300px;
 }
+
+li:hover {
+  color: #f6f604;
+}
+
+.grow { 
+  transition: all .2s ease-in-out; 
+  }
+  
+  .grow:hover { 
+  transform: scale(1.1); 
+  }

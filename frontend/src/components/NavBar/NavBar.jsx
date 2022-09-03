@@ -12,10 +12,13 @@ const Navbar = () => {
     <div className="navBar">
       <ul>
         <li className="brand">
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+          <Link to="/">
             <img src={razorLogo} alt='razorLogo' className="razorLogo"></img>
           </Link>
         </li>
+        <li className="grow">About</li>
+        <li className="grow home" onClick={() => navigate("/")}>Home</li>
+        <li className="grow" onClick={() => navigate("/bookappointment")}>Book Appointment</li>
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+     box-sizing: border-box;
+     font-family: "Poppins", sans-serif;
+}
+
+.submitButton {
+    text-align: center;
+    font-size: small;
+}
+
+.appointmentForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.promptContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+h1{
+    margin: 10px 10px;
+}
