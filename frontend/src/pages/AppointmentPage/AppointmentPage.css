@@ -5,11 +5,6 @@
      font-family: "Poppins", sans-serif;
 }
 
-.submitButton {
-    text-align: center;
-    font-size: small;
-}
-
 .appointmentForm {
     display: flex;
     justify-content: center;
@@ -24,6 +19,35 @@
     
 }
 
-h1{
+h2{
     margin: 10px 10px;
+}
+
+button {
+    border-color: black;
+    color: black;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
+}
+
+select {
+    background-color: black;
+    color: white;
+    width: 120px;
+    height:40px
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input {
+    height: 40px;
 }

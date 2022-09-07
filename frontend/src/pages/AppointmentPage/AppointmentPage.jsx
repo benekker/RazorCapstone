@@ -5,6 +5,7 @@ import './AppointmentPage.css';
 import Button from 'react-bootstrap/Button';
 import FullCalendar from '@fullcalendar/react';
 import daygridPlugin from '@fullcalendar/daygrid';
+import DisplayAppointments from '../../components/DisplayAppointments/DisplayAppointments';
 
 
 
@@ -43,7 +44,7 @@ const AppointmentPage = () => {
     <div className='container-wrap'>
         <form className='appointmentForm' onSubmit={makeAppointment}>
             <div className='promptContainer'>
-                <label for='input'><h1>When can we help you?</h1></label>
+                <label for='input'><h2>When can we help you?</h2></label>
                 <input
                 id='input'
                 type="date"
@@ -51,7 +52,7 @@ const AppointmentPage = () => {
                 onChange={(event) => setDate(event.target.value)}/>
             </div>
             <div className='promptContainer'>
-                <label for="timeSelect"><h1>What time works for you?</h1></label>
+                <label for="timeSelect"><h2>What time works for you?</h2></label>
                 <select id='timeSelect' className='custom-select'value={time} onChange={(event) => {
                     setTime(event.target.value)
                 }}>
@@ -67,7 +68,7 @@ const AppointmentPage = () => {
                 </select>
             </div>
             <div className='promptContainer'>
-                <label for='serviceSelect'><h1>What can we do for you?</h1></label>
+                <label for='serviceSelect'><h2>What can we do for you?</h2></label>
                 <select id='serviceSelect' value={serviceBooked} onChange={(event) => {
                     setServiceBooked(event.target.value)
                 }}>
@@ -79,12 +80,7 @@ const AppointmentPage = () => {
             <button type='submit'>Book it!</button>
         </form>
         <div>
-            <FullCalendar
-    plugins={[ daygridPlugin]}
-    initialView="dayGridMonth"
-    events={[
-        {}
-    ]}/>
+            <DisplayAppointments />
         </div>
     </div>
     

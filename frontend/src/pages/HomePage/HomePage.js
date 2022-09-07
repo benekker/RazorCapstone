@@ -1,41 +1,30 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import bayviewWall from "./Assets/bayviewWall.jpg"
+import "./HomePage.css"
 
-import axios from "axios";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
   const [user, token] = useAuth();
-  const [cars, setCars] = useState([]);
+  
 
-  useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        });
-        setCars(response.data);
-      } catch (error) {
-        console.log(error.response.data);
-      }
-    };
-    fetchCars();
-  }, [token]);
+ 
+  
   return (
-    <div className="container">
-      <h1>Welcome, {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.model} {car.make}
-          </p>
-        ))}
+  <div className="container">
+    <div className="img-wrap">
+      <img src={bayviewWall} />
     </div>
+    <p>Established in 2007, Razor is a contemporary men's barbershop that provides an upscale experience for an affordable price in a relaxed atmosphere.
+       Locally owned and operated by barber, Anthony Leto, who boasts over 17 years of experience. 
+       Located right in the heart of Bay View's newly revitalized business sector, Razor offers the finest custom haircut and service for your dollar. 
+       Every individual receives special attention which includes: consultation, precision haircut or color, style, beard trim, hot towel and straight-edge razor detailing. 
+       Come in and relax in a wide comfortable barber chair, watch television and enjoy a cold complimentary refreshment.</p>
+  </div>
+  
   );
 };
 
