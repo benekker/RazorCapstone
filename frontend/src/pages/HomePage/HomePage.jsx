@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import bayviewWall from "./Assets/bayviewWall.jpg"
 import "./HomePage.css"
@@ -9,12 +10,14 @@ const HomePage = () => {
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
   const [user, token] = useAuth();
+  const navigate = useNavigate();
   
 
  
   
   return (
   <div className="container">
+    <button onClick={() => navigate("/staffpage")}>Staff Portal</button>
     <div className="img-wrap">
       <img src={bayviewWall} />
     </div>

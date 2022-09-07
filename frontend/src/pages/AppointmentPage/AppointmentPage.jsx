@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import axios from "axios";
 import useAuth from '../../hooks/useAuth';
 import './AppointmentPage.css';
-import Button from 'react-bootstrap/Button';
-import FullCalendar from '@fullcalendar/react';
-import daygridPlugin from '@fullcalendar/daygrid';
 import DisplayAppointments from '../../components/DisplayAppointments/DisplayAppointments';
 
 
