@@ -19,18 +19,20 @@ const StaffPage = () => {
                     Authorization: "Bearer " + token,
                 },
             })
-            let appointmentArray = response.data.map((appointment) => {
-                return {
-                    id: appointment.id, title: "Appointment Booked", start: `${appointment.date}T${appointment.time}`,
-                }
-            })
-            setAllAppointments(appointmentArray)
+           setAllAppointments(response.data)
         } catch (error) {
             console.log(error.message)
         }
     }
+
     useEffect(getAllAppointments, [])
-    console.log(allAppointments)
+    
+    let eventArray = allAppointments.map((appointment) => {
+        return {
+            id: appointment.id, title: "Appointment Booked", start: `${appointment.date}T${appointment.time}`,
+        }
+    })
+    
   return (
     <div className='main-wrap'>
         <div>
@@ -42,11 +44,11 @@ const StaffPage = () => {
         eventBackgroundColor="#cf3e38"
         eventDisplay='block'
         initialView="dayGridMonth"
-        events= {allAppointments}
+        events= {eventArray}
         headerToolbar={{right: 'dayGridMonth,dayGridWeek,dayGridDay,prev,next'}}
         navLinks={true}
         />
-        <StaffServicesGraph appointments = {allAppointments} />
+        <StaffServicesGraph allAppointments={allAppointments}/>
     </div>
   )
 }

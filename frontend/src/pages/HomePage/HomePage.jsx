@@ -9,7 +9,7 @@ const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
-  const [user, token] = useAuth();
+  const [user] = useAuth();
   const navigate = useNavigate();
   
 
@@ -17,7 +17,11 @@ const HomePage = () => {
   
   return (
   <div className="container">
-    <button onClick={() => navigate("/staffpage")}>Staff Portal</button>
+    {user.is_staff ? (
+      <button onClick={() => navigate("/staffpage")}>Staff Portal</button>
+    ) : (
+      <h1>Welcome, to Razor</h1>
+    )}
     <div className="img-wrap">
       <img src={bayviewWall} />
     </div>

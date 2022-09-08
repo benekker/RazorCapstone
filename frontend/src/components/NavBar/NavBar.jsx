@@ -8,6 +8,7 @@ import razorLogo from './Assets/razorLogo.png'
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
+  console.log(user)
   return (
     <div className="navBar">
       <ul>

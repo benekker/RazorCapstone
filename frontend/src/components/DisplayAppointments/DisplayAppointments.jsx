@@ -29,7 +29,7 @@ const DisplayAppointments = () => {
         }
     }
     useEffect(getAppointments, [])
-    console.log(appointments)
+    
 
 
   return (

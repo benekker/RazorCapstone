@@ -15,6 +15,10 @@ const AppointmentPage = () => {
     const [time, setTime] = useState();
     const [serviceBooked, setServiceBooked] = useState()
 
+    // function submitAlert() {
+    //     alert("Your appointment has been booked!");
+    // }
+
     const makeAppointment = async (event) => {
         try{
         event.preventDefault();
@@ -56,12 +60,12 @@ const AppointmentPage = () => {
                     <option value="10:00:00">10AM</option>
                     <option value="11:00">11AM</option>
                     <option value="12:00">12PM</option>
-                    <option value="1:00">1PM</option>
-                    <option value="2:00">2PM</option>
-                    <option value="3:00">3PM</option>
-                    <option value="4:00">4PM</option>
-                    <option value="5:00">5PM</option>
-                    <option value="6:00">6PM</option>
+                    <option value="13:00">1PM</option>
+                    <option value="14:00">2PM</option>
+                    <option value="15:00">3PM</option>
+                    <option value="16:00">4PM</option>
+                    <option value="17:00">5PM</option>
+                    <option value="18:00">6PM</option>
                 </select>
             </div>
             <div className='promptContainer'>
