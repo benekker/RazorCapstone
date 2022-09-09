@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import useAuth from '../../hooks/useAuth';
 import './AppointmentPage.css';
 import DisplayAppointments from '../../components/DisplayAppointments/DisplayAppointments';
 
-
-
-
-
 const AppointmentPage = () => {
-
     const [user, token] = useAuth();
     const [date, setDate] = useState();
     const [time, setTime] = useState();
     const [serviceBooked, setServiceBooked] = useState()
+    const [allAppointments, setAllAppointments] = useState([]);
+    
+    const getAllAppointments = async() => {
+        try{
+            let response = await axios.get('http://127.0.0.1:8000/api/appointments/all/', {
+                headers: {
+                    Authorization: "Bearer " + token,
+                },
+            })
+           setAllAppointments(response.data)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+    useEffect(getAllAppointments, [])
+    console.log(allAppointments)
 
-    // function submitAlert() {
-    //     alert("Your appointment has been booked!");
-    // }
 
     const makeAppointment = async (event) => {
         try{
@@ -40,7 +48,32 @@ const AppointmentPage = () => {
         console.log(error.message)
     }
     }
+    let timeSlots =
+    ["10:00:00",
+    "11:00:00",
+    "12:00:00",
+    "13:00:00",
+    "14:00:00",
+    "15:00:00",
+    "16:00:00",
+    "17:00:00",
+    "18:00:00",
+    ]
 
+    const selectedDateAppointments = allAppointments
+    .filter(appointment => appointment.date === date)
+    .map(appointment => appointment.time);
+
+    const options = timeSlots.map(timeslot => {
+        return (
+            !selectedDateAppointments.includes(timeslot) && (
+                <option key={timeslot} value={timeslot}>
+                    {timeslot}
+                </option>
+            )
+        )
+    })
+    
   return (
     <div className='container-wrap'>
         <form className='appointmentForm' onSubmit={makeAppointment}>
@@ -57,15 +90,7 @@ const AppointmentPage = () => {
                 <select id='timeSelect' className='custom-select'value={time} onChange={(event) => {
                     setTime(event.target.value)
                 }}>
-                    <option value="10:00:00">10AM</option>
-                    <option value="11:00">11AM</option>
-                    <option value="12:00">12PM</option>
-                    <option value="13:00">1PM</option>
-                    <option value="14:00">2PM</option>
-                    <option value="15:00">3PM</option>
-                    <option value="16:00">4PM</option>
-                    <option value="17:00">5PM</option>
-                    <option value="18:00">6PM</option>
+                    {options}
                 </select>
             </div>
             <div className='promptContainer'>

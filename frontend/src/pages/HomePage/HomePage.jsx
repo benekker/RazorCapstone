@@ -22,9 +22,7 @@ const HomePage = () => {
     ) : (
       <h1>Welcome, to Razor</h1>
     )}
-    <div className="img-wrap">
       <img src={bayviewWall} />
-    </div>
     <p>Established in 2007, Razor is a contemporary men's barbershop that provides an upscale experience for an affordable price in a relaxed atmosphere.
        Locally owned and operated by barber, Anthony Leto, who boasts over 17 years of experience. 
        Located right in the heart of Bay View's newly revitalized business sector, Razor offers the finest custom haircut and service for your dollar. 

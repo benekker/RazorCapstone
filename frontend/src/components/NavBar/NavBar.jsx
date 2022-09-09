@@ -17,7 +17,7 @@ const Navbar = () => {
             <img src={razorLogo} alt='razorLogo' className="razorLogo"></img>
           </Link>
         </li>
-        <li className="grow">About</li>
+        <li className="grow" onClick={() => navigate("/about")}>About</li>
         <li className="grow home" onClick={() => navigate("/")}>Home</li>
         <li className="grow" onClick={() => navigate("/bookappointment")}>Book Appointment</li>
         <li>
