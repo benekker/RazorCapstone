@@ -6,3 +6,5 @@ class Appointment(models.Model):
     date = models.DateField()
     time = models.TimeField()
     service_booked = models.CharField(max_length=200)
+    name = models.CharField(max_length=200,null=True)
+    email = models.CharField(max_length=250,null=True)

@@ -27,6 +27,8 @@ h2{
 button {
     border-color: black;
     color: black;
+    display: flex;
+    justify-content: center;
 }
 
 button:hover {
@@ -51,4 +53,16 @@ input:hover {
 
 input {
     height: 40px;
+}
+
+.personal-info input {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.personal-info label {
+    font-weight: bold;
 }

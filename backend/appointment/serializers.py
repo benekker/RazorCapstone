@@ -4,5 +4,5 @@ from rest_framework import serializers
 class AppointmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Appointment
-        fields = ['id', 'user_id', 'date', 'time', 'service_booked']
+        fields = ['id', 'user_id', 'date', 'time', 'service_booked', 'name', 'email']
         depth = 1

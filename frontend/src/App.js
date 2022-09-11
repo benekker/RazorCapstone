@@ -32,11 +32,10 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/bookappointment" element={<PrivateRoute><AppointmentPage /></PrivateRoute>}/>
+        <Route path="/bookappointment" element={<AppointmentPage />}/>
         <Route path='/staffpage' element={<StaffPage />} />
         <Route path='/about' element={<AboutPage />} />
       </Routes>
-      {/* <Footer /> */}
     </div>
   );
 }

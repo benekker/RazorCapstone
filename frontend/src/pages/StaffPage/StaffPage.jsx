@@ -4,6 +4,7 @@ import axios from 'axios';
 import FullCalendar from '@fullcalendar/react';
 import daygridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
 import StaffServicesGraph from '../../components/StaffServicesGraph/StaffServicesGraph';
 import "./StaffPage.css"
 
@@ -29,7 +30,7 @@ const StaffPage = () => {
     
     let eventArray = allAppointments.map((appointment) => {
         return {
-            id: appointment.id, title: "Appointment Booked", start: `${appointment.date}T${appointment.time}`,
+            id: appointment.id, title:`${appointment.name} | ${appointment.email} | ${appointment.service_booked}`, start: `${appointment.date}T${appointment.time}`,
         }
     })
     
@@ -39,18 +40,19 @@ const StaffPage = () => {
             <h2>Welcome, {user.username}!</h2>
         </div>
         <FullCalendar
-        plugins={[ daygridPlugin, timeGridPlugin]}
+        height={650}
+        plugins={[listPlugin]}
         hiddenDays= "0"
         eventBackgroundColor="#cf3e38"
         eventDisplay='block'
-        initialView="dayGridMonth"
+        initialView="listWeek"
         events= {eventArray}
-        headerToolbar={{right: 'dayGridMonth,dayGridWeek,dayGridDay,prev,next'}}
+        headerToolbar={{right: 'prev,next'}}
         navLinks={true}
         />
         <StaffServicesGraph allAppointments={allAppointments}/>
     </div>
   )
 }
-
-export default StaffPage
+// daygridPlugin, timeGridPlugin,
+export default StaffPage;

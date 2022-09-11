@@ -8,7 +8,9 @@ const AppointmentPage = () => {
     const [user, token] = useAuth();
     const [date, setDate] = useState();
     const [time, setTime] = useState();
-    const [serviceBooked, setServiceBooked] = useState()
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState()
+    const [serviceBooked, setServiceBooked] = useState('')
     const [allAppointments, setAllAppointments] = useState([]);
     
     const getAllAppointments = async() => {
@@ -34,6 +36,8 @@ const AppointmentPage = () => {
             "date": date,
             "time": time,
             "service_booked": serviceBooked,
+            "name": name,
+            "email": email
             
             
         }
@@ -44,8 +48,10 @@ const AppointmentPage = () => {
                 Authorization: "Bearer " + token,
             },
         });
+        alert('Your appointment has been booked!')
     } catch (error){
         console.log(error.message)
+        alert('We failed to book your appointment, please make sure all fields are properly filled out!')
     }
     }
     let timeSlots =
@@ -73,7 +79,7 @@ const AppointmentPage = () => {
             )
         )
     })
-    
+
   return (
     <div className='container-wrap'>
         <form className='appointmentForm' onSubmit={makeAppointment}>
@@ -98,10 +104,17 @@ const AppointmentPage = () => {
                 <select id='serviceSelect' value={serviceBooked} onChange={(event) => {
                     setServiceBooked(event.target.value)
                 }}>
+                    <option disabled>Please select a service</option>
                     <option value='haircut'>Haircut</option>
                     <option value='beardtrim'>Beard Trim</option>
                     <option value='colorservice'>Color Treatment</option>
                 </select>
+            </div>
+            <div className='personal-info'>
+                <label for='nameInput'>Name:</label>
+                <input id='nameInput' type='text' value={name} onChange={(event) => setName(event.target.value)}/>
+                <label for='emailInput'>Email:</label>
+                <input id='emailInput' type='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
             </div>
             <button type='submit'>Book it!</button>
         </form>

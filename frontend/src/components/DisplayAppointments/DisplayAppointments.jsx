@@ -35,6 +35,7 @@ const DisplayAppointments = () => {
   return (
     <div>
         <FullCalendar
+        height={900}
         plugins={[ daygridPlugin, timeGridPlugin]}
         hiddenDays= "0"
         eventBackgroundColor="#cf3e38"
