@@ -1,7 +1,72 @@
 
-img {
+.main-image {
     height: auto;
-    max-width: 100%;
+    max-width: 50%;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.info {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.info h2 {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.info p {
+    text-align: center;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
     
 }
 
+.services p {
+    display: flex;
+    justify-content: left;
+    
+    
+}
+
+.services p img {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.main-header h1 {
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 60px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center;
+}
+
+.main-header h2 {
+    color: #111; 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 20px; 
+    font-weight: 300; 
+    line-height: 32px; 
+    text-align: center;
+}
+
+.staff-button {
+    margin-left: 1750px;
+}

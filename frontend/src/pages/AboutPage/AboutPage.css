@@ -1,0 +1,32 @@
+.content-wrap {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+#bg {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.about-text p{
+    font-size: 22px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.about-text h2 {
+    border-bottom: 1px solid black;
+    
+}
+
+
+.content-wrap footer {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    
+}

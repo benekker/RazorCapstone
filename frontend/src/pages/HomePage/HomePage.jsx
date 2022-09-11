@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import bayviewWall from "./Assets/bayviewWall.jpg"
 import "./HomePage.css"
+import haircut from './Assets/haircutimg.png'
+import beardtrim from './Assets/beardtrimimg.png'
+import colorservice from './Assets/colorserviceimg.png'
+
 
 
 const HomePage = () => {
@@ -16,18 +20,38 @@ const HomePage = () => {
  
   
   return (
-  <div className="container">
+  <div className="main-container">
     {user.is_staff ? (
-      <button onClick={() => navigate("/staffpage")}>Staff Portal</button>
+      <div className="staff-button">
+        <button onClick={() => navigate("/staffpage")}>Staff Portal</button>
+      </div>
     ) : (
-      <h1>Welcome, to Razor</h1>
+      <div className="main-header"> 
+        <h1>Welcome, to Razor.</h1>
+        <h2>Where quality service meets maximum comfort</h2>
+      </div>
     )}
-      <img src={bayviewWall} />
-    <p>Established in 2007, Razor is a contemporary men's barbershop that provides an upscale experience for an affordable price in a relaxed atmosphere.
-       Locally owned and operated by barber, Anthony Leto, who boasts over 17 years of experience. 
-       Located right in the heart of Bay View's newly revitalized business sector, Razor offers the finest custom haircut and service for your dollar. 
-       Every individual receives special attention which includes: consultation, precision haircut or color, style, beard trim, hot towel and straight-edge razor detailing. 
-       Come in and relax in a wide comfortable barber chair, watch television and enjoy a cold complimentary refreshment.</p>
+      <div className="main-image">
+        <img src={bayviewWall} />
+      </div>
+      <div className="info">
+        <div className="hours">
+            <h2>Hours</h2>
+            <p>Open monday - saturday</p>
+            <p>10AM - 6PM</p>
+        </div>
+        <div className="contact">
+            <h2>Contact</h2>
+            <p>by appointment only | Book through our site or call 414 482-0633</p>
+            <p>Located at 2340 S. Kinnickinnic Ave. Milwaukee, WI 53207</p>
+        </div>
+        <div className="services">
+          <h2>Services</h2>
+          <p><img src={haircut} alt="haircut img"/>Haircut: $20</p>
+          <p><img src={beardtrim} alt="beardtrim img"/>Beard Trim: $14</p>
+          <p><img src={colorservice} alt="colorservice img"/>Color Service: $25</p>
+        </div>
+      </div>
   </div>
   
   );
