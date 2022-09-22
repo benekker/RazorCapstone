@@ -44,7 +44,7 @@
 .services p img {
     height: 30px;
     width: 30px;
-    margin-right: 5px;
+    margin-right: 10px;
     margin-bottom: 5px;
 }
 
@@ -69,4 +69,11 @@
 
 .staff-button {
     margin-left: 1750px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    
 }

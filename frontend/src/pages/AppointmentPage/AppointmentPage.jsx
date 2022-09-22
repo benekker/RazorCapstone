@@ -13,6 +13,9 @@ const AppointmentPage = () => {
     const [serviceBooked, setServiceBooked] = useState('')
     const [allAppointments, setAllAppointments] = useState([]);
     
+    
+    var convertTime = require('convert-time');
+
     const getAllAppointments = async() => {
         try{
             let response = await axios.get('http://127.0.0.1:8000/api/appointments/all/', {
@@ -34,7 +37,7 @@ const AppointmentPage = () => {
         event.preventDefault();
         let newAppointment = {
             "date": date,
-            "time": time,
+            "time": convertTime(time),
             "service_booked": serviceBooked,
             "name": name,
             "email": email
@@ -55,15 +58,15 @@ const AppointmentPage = () => {
     }
     }
     let timeSlots =
-    ["10:00:00",
-    "11:00:00",
-    "12:00:00",
-    "13:00:00",
-    "14:00:00",
-    "15:00:00",
-    "16:00:00",
-    "17:00:00",
-    "18:00:00",
+    [convertTime("10:00:00"),
+    convertTime("11:00:00"),
+    convertTime("12:00:00"),
+    convertTime("13:00:00"),
+    convertTime("14:00:00"),
+    convertTime("15:00:00"),
+    convertTime("16:00:00"),
+    convertTime("17:00:00"),
+    convertTime("18:00:00"),
     ]
 
     const selectedDateAppointments = allAppointments

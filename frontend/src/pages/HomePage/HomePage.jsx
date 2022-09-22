@@ -31,6 +31,7 @@ const HomePage = () => {
         <h2>Where quality service meets maximum comfort</h2>
       </div>
     )}
+    <div className="content-container">
       <div className="main-image">
         <img src={bayviewWall} />
       </div>
@@ -51,6 +52,7 @@ const HomePage = () => {
           <p><img src={beardtrim} alt="beardtrim img"/>Beard Trim: $14</p>
           <p><img src={colorservice} alt="colorservice img"/>Color Service: $25</p>
         </div>
+      </div>
       </div>
   </div>
   
