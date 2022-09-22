@@ -114,10 +114,10 @@ const AppointmentPage = () => {
                 </select>
             </div>
             <div className='personal-info'>
-                <label for='nameInput'>Name:</label>
-                <input id='nameInput' type='text' value={name} onChange={(event) => setName(event.target.value)}/>
-                <label for='emailInput'>Email:</label>
-                <input id='emailInput' type='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
+                {/* <label for='nameInput'>Name:</label> */}
+                <input id='nameInput' placeholder='Enter Your Name' type='text' value={name} onChange={(event) => setName(event.target.value)}/>
+                {/* <label for='emailInput'>Email:</label> */}
+                <input id='emailInput' placeholder='Enter Your Email' type='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
             </div>
             <button type='submit'>Book it!</button>
         </form>

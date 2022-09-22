@@ -13,7 +13,7 @@ li {
 .navBar {
   background: black;
   box-shadow: 4px 2px 5px gray;
-  color: white;
+  color: #f6f604;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
 }
@@ -43,7 +43,7 @@ li {
 }
 
 li:hover {
-  color: #f6f604;
+  color: white;
 }
 
 .grow { 
@@ -53,3 +53,5 @@ li:hover {
   .grow:hover { 
   transform: scale(1.1); 
   }
+
+  

@@ -53,6 +53,15 @@ input:hover {
 
 input {
     height: 40px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    text-align: center;
+}
+
+.no-outline:focus {
+    outline: none;
 }
 
 .personal-info input {
@@ -66,3 +75,9 @@ input {
 .personal-info label {
     font-weight: bold;
 }
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+
