@@ -95,7 +95,7 @@ const AppointmentPage = () => {
                 onChange={(event) => setDate(event.target.value)}/>
             </div>
             <div className='promptContainer'>
-                <label for="timeSelect"><h2>What time works for you?</h2></label>
+                <label for="timeSelect"><h2>Please Select a Time:</h2></label>
                 <select id='timeSelect' className='custom-select'value={time} onChange={(event) => {
                     setTime(event.target.value)
                 }}>
